@@ -1,6 +1,16 @@
 import "./App.css";
+import { useState } from "react";
 
 function App() {
+  type Note = {
+    id: string;
+    title: string;
+    context: string;
+    timestamp: string;
+  };
+
+  const [notes, setNotes] = useState<Note[]>([]);
+
   return (
     <main>
       <section className="editor">
