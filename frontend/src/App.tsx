@@ -1,29 +1,28 @@
 import "./App.css";
 import { useState } from "react";
+import { useRef } from "react";
+
+type note = {
+  id: string;
+  title: string;
+  text: string;
+  timestamp: number;
+};
+
+let notes: note[] = [];
+let editingID: string | null = null;
 
 function App() {
-  type Note = {
-    id: string;
-    title: string;
-    context: string;
-    timestamp: string;
-  };
+  function save() {}
 
-  const [notes, setNotes] = useState<Note[]>([]);
+  function change() {}
 
   return (
     <main>
-      <section className="editor">
-        <h2>Editor</h2>
-        <input type="text" placeholder="Title" />
-        <textarea placeholder="note typing here..."></textarea>
-        <button>Save</button>
-      </section>
-
-      <section className="list">
-        <h2>List</h2>
-        <button>New</button>
-      </section>
+      <h2>web-memo</h2>
+      <button type="button" onClick={save}>
+        SAVE
+      </button>
     </main>
   );
 }
